@@ -1,0 +1,14 @@
+[
+  {"id": "health", "method": "GET", "path": "/health", "params": {},
+   "expect": {"status": 200, "contains": "ok"}},
+  {"id": "sum_basic", "method": "GET", "path": "/sum",
+   "params": {"a": "2", "b": "3"}, "expect": {"status": 200, "body_is": "5"}},
+  {"id": "sum_equal", "method": "GET", "path": "/sum",
+   "params": {"a": "3", "b": "3"}, "expect": {"status": 200, "body_is": "6"}},
+  {"id": "search_lowercase", "method": "GET", "path": "/items",
+   "params": {"q": "apple"}, "expect": {"status": 200, "contains": "Apple Pie"}},
+  {"id": "search_uppercase", "method": "GET", "path": "/items",
+   "params": {"q": "APPLE"}, "expect": {"status": 200, "contains": "Apple Pie"}},
+  {"id": "echo", "method": "GET", "path": "/echo",
+   "params": {"msg": "hello"}, "expect": {"status": 200, "body_is": "hello"}}
+]
